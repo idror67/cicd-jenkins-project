@@ -1,6 +1,6 @@
 services:
   my-app:
-    image: idror/flask-contacts-app:latest
+    image: idror/my-jenkins-flask-cicdproject:latest
     ports:
       - "5000:5000"
     environment:
