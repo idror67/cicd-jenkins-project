@@ -4,7 +4,7 @@ FROM python:3.8
 WORKDIR /app
 
 # Copy requirements.txt from the local FLASK-CONTACTS-DEVOPS directory
-COPY FLASK-CONTACTS-DEVOPS/requirements.txt /app/
+COPY FLASK-CONTACTS-APP/requirements.txt /app/
 
 # Install the dependencies
 RUN pip install --no-cache-dir -r /app/requirements.txt
