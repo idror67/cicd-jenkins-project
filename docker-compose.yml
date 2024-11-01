@@ -11,11 +11,11 @@ services:
       - DB_NAME=mydatabase
     depends_on:
       - mysql
-      healthcheck:
-        test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-        interval: 30s
-        timeout: 10s
-        retries: 5
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
   mysql:
     image: mysql:8.0
     environment:
