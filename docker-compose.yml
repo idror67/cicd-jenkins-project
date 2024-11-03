@@ -4,7 +4,7 @@ services:
   my-app:
   image: idror/my-jenkins-flask-cicdproject:latest
   ports:
-    - "5002:5002"
+    - "5052:5052"
   environment:
     - DB_HOST=mysql
     - DB_PORT=3306
@@ -13,7 +13,9 @@ services:
     - DB_NAME=mydatabase
   depends_on:
     - mysql
-  
+        services_healthy
+      
+
   mysql:
     image: mysql:8.0
     environment:
