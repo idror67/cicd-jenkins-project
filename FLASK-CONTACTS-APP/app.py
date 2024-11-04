@@ -20,10 +20,7 @@ elif db_to_use == "MONGO":
 
 app = Flask(__name__)
 
-# Suppress the production warning
-if os.environ.get('WERKZEUG_RUN_MAIN') == 'true':
-    import logging
-    logging.getLogger('werkzeug').setLevel(logging.ERROR)
+
 
 
 @app.route('/')
