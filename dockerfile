@@ -1,5 +1,6 @@
-# Use the official Python image from the DockerHub
-FROM python:3.8
+# Use the official slim Python image from the DockerHub
+FROM python:3.8-slim
+
 # Set the working directory in the container
 WORKDIR /app
 
@@ -11,5 +12,9 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy the rest of the application code into the container
 COPY FLASK-CONTACTS-APP/ /app/
+
+# Set environment variable to production
+ENV FLASK_ENV=production
+
 # Set the entrypoint to wait for MySQL and run the app
 ENTRYPOINT ["sh", "-c", "sleep 10 && python app.py"]
