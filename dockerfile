@@ -13,8 +13,5 @@ RUN pip install --no-cache-dir -r /app/requirements.txt
 # Copy the rest of the application code into the container
 COPY FLASK-CONTACTS-APP/ /app/
 
-# Set environment variable to production
-ENV FLASK_ENV=production
-
 # Set the entrypoint to wait for MySQL and run the app
-ENTRYPOINT ["sh", "-c", "sleep 10 && python app.py"]
+ENTRYPOINT ["sh", "-c", "sleep 10 && python -m flask run --host=0.0.0.0 --port=5052"]
