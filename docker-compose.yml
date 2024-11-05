@@ -2,8 +2,7 @@ version: '3.8'
 
 services:
   my-app:
-    image: idror-cicd-project
-    ports:
+    image: idror-cicd-pro
       - "5053:5052"
     environment:
       - DB_HOST=mysql
