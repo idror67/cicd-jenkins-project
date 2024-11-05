@@ -4,7 +4,7 @@ services:
   my-app:
     image: idror-cicd-project
     ports:
-      - "5052:5052"
+      - "5053:5052"
     environment:
       - DB_HOST=mysql
       - DB_PORT=3306
