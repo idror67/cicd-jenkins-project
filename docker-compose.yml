@@ -23,7 +23,7 @@ services:
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       interval: 5s
-      timeout: 5s
+      timeout: 15s
       retries: 5  
     volumes:
       - mysql-data:/var/lib/mysql  
