@@ -2,8 +2,8 @@ version: '3.8'
 
 services:
   my-app:
-    image: idror-cicd-pro
-      - "5053:5052"
+    image: idror/ciccd-pro:latest
+      - "5052:5052"
     environment:
       - DB_HOST=mysql
       - DB_PORT=3306
