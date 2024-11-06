@@ -6,7 +6,7 @@ WORKDIR /app
 # Copy requirements.txt from the local FLASK-CONTACTS-DEVOPS directory
 COPY FLASK-CONTACTS-APP/requirements.txt /app/
 
-# Install the dependencies
+# Install the dependenciesStart-Process "C:\Program Files\Docker\Docker\Docker Desktop.exe"
 RUN pip install --no-cache-dir -r /app/requirements.txt
 
 # Copy the rest of the application code into the container
