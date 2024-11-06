@@ -1,8 +1,8 @@
 services:
   my-app:
-    image: idror/ciccd_pro:latest
+    image: idror/jenkins-cicd-project:latest
     ports:
-      - "5052:5052"
+      - "5053:5052"
     environment:
       - DB_HOST=mysql
       - DB_PORT=3306
