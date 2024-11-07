@@ -1,6 +1,6 @@
-sservices:
+services:
   my-app:
-    image: idror/cicd-jenkins-project:latest
+    image: idror/cicd-jenkins-project
     ports:
       - "5053:5052"
     environment:
