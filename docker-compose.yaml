@@ -10,7 +10,7 @@ services:
       - DB_PASSWORD=admin
       - DB_NAME=mydatabase
     depends_on:
-      mysql
+      - mysql
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3306"]
       interval: 30s
