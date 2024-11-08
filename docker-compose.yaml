@@ -2,7 +2,7 @@ services:
   my-app:
     image: idror/cicd-jenkins-project:latest
     ports:
-      - 5054:5052
+      - 5053:5052
     environment:
       # we will do it later
       - DATABASE_TYPE=MONGO 
