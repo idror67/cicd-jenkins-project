@@ -1,31 +1,33 @@
 services:
   my-app:
-    image: idror/cicd-jenkins-project
+    image: idror/cicd-jenkins-project:latest
     ports:
-      - "5053:5052"
+      - 5053:5052
     environment:
-      - DB_HOST=mysql
-      - DB_PORT=3306
-      - DB_USER=root
-      - DB_PASSWORD=admin
-      - DB_NAME=mydatabase
-    depends_on:
-      mysql:
-        condition: service_healthy
-    
-  mysql:
-    image: mysql:8.0
-    environment:
-      MYSQL_ROOT_PASSWORD: admin
-      MYSQL_DATABASE: mydatabase
-    healthcheck:
-      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
-      interval: 5s
-      timeout: 5s
-      retries: 5  
+      # we will do it later
+      - DATABASE_TYPE=MONGO 
+      - MONGO_URI=mongodb://mongo:27017/
     volumes:
-      - mysql-data:/var/lib/mysql  
-  
-
+      - app-data:/app/static/images
+    depends_on:
+      mongo:
+        condition: service_healthy
+  mongo:
+    image: mongo:4.4.6
+    volumes:
+      - mongo-data:/data/db   
+    healthcheck:
+      test: ["CMD", "mongo", "admin", "--eval", "db.stats()"]
+      interval: 30s
+      timeout: 10s
+      retries: 5  
+  mongo-express:
+    image: mongo-express
+    ports:
+      - 8081:8081
+    depends_on:
+      mongo:
+        condition: service_healthy
 volumes:
-  mysql-data:
+  mongo-data:
+  app-data:
