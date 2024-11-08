@@ -29,5 +29,5 @@ services:
       mongo:
         condition: service_healthy
 volumes:
-  mongo-data:
-  app-data:
+    mongo-data:
+    app-data:
