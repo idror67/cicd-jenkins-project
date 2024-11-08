@@ -28,6 +28,6 @@ services:
     depends_on:
       mongo:
         condition: service_healthy
-volumes:
+volumes:exit
   mongo-data:
   app-data:
